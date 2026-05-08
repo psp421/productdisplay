@@ -1,0 +1,17 @@
+{
+  "name": "apptest",
+  "version": "1.0.0",
+  "description": "My CAP Project",
+  "dependencies": {
+    "@sap/cds": "^9",
+    "@sap/cds-dk": "^9"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.4.0",
+    "better-sqlite3": "^12.9.0"
+  },
+  "scripts": {
+    "start": "cds run",
+    "watch": "cds watch"
+  }
+}
