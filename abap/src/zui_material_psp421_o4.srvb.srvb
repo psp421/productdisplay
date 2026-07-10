@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+    <SRVB>
+      <SRVBNAME>ZUI_MATERIAL_PSP421_O4</SRVBNAME>
+      <SRVDNAME>ZUI_MATERIAL_PSP421_O4</SRVDNAME>
+      <LANGUAGE>E</LANGUAGE>
+      <DESCRIPTION>Material Display - OData V4 UI Service Binding</DESCRIPTION>
+      <CATEGORY>ODATA</CATEGORY>
+      <BINDINGTYPE>ODATA</BINDINGTYPE>
+      <VERSION>V4</VERSION>
+      <SRVBTYPE>UI</SRVBTYPE>
+    </SRVB>
+  </asx:values>
+</asx:abap>
