@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+    <TDDLXT>
+      <item>
+        <DDLNAME>ZC_MATERIAL_PSP421</DDLNAME>
+        <DDLANGUAGE>E</DDLANGUAGE>
+        <DDTEXT>Material Display - Metadata Extension</DDTEXT>
+      </item>
+    </TDDLXT>
+  </asx:values>
+</asx:abap>
