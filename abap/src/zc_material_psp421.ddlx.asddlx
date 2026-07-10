@@ -9,8 +9,8 @@
 @UI.headerInfo: {
   typeName:       'Material',
   typeNamePlural: 'Materials',
-  title:          { type: #STANDARD, label: 'Material',     value: 'Material' },
-  description:    { type: #STANDARD, label: 'Description',  value: 'MaterialName' }
+  title:          { type: #STANDARD, label: 'Material',    value: 'Product' },
+  description:    { type: #STANDARD, label: 'Description', value: 'ProductDescription' }
 }
 
 annotate view ZC_Material_PSP421
@@ -28,35 +28,35 @@ annotate view ZC_Material_PSP421
       position: 10
     },
     {
-      id:       'WeightVolume',
-      purpose:  #STANDARD,
-      type:     #FIELDGROUP_REFERENCE,
+      id:              'WeightVolume',
+      purpose:         #STANDARD,
+      type:            #FIELDGROUP_REFERENCE,
       targetQualifier: 'WeightVolume',
-      label:    'Weight & Volume',
-      position: 20
+      label:           'Weight & Volume',
+      position:        20
     }
   ]
 
   /*===========================================================*
-   * Material (key)
+   * Product (key)
    *===========================================================*/
   @UI: {
-    lineItem:       [{ position: 10, importance: #HIGH, label: 'Material' }],
+    lineItem:       [{ position: 10, importance: #HIGH,   label: 'Material' }],
     identification: [{ position: 10 }],
     selectionField: [{ position: 10 }]
   }
   @Search.defaultSearchElement: true
-  Material;
+  Product;
 
   /*===========================================================*
    * Material Description (text)
    *===========================================================*/
   @UI: {
-    lineItem:       [{ position: 20, importance: #HIGH, label: 'Description' }],
+    lineItem:       [{ position: 20, importance: #HIGH,   label: 'Description' }],
     identification: [{ position: 20 }],
     selectionField: [{ position: 20 }]
   }
-  MaterialName;
+  ProductDescription;
 
   /*===========================================================*
    * Material Type
@@ -66,7 +66,7 @@ annotate view ZC_Material_PSP421
     identification: [{ position: 30 }],
     selectionField: [{ position: 30 }]
   }
-  MaterialType;
+  ProductType;
 
   /*===========================================================*
    * Industry Sector
@@ -85,14 +85,23 @@ annotate view ZC_Material_PSP421
     identification: [{ position: 50 }],
     selectionField: [{ position: 40 }]
   }
-  MaterialGroup;
+  ProductGroup;
+
+  /*===========================================================*
+   * Product Hierarchy
+   *===========================================================*/
+  @UI: {
+    lineItem:       [{ position: 60, importance: #LOW }],
+    identification: [{ position: 60 }]
+  }
+  ProductHierarchy;
 
   /*===========================================================*
    * Base Unit
    *===========================================================*/
   @UI: {
-    lineItem:       [{ position: 60, importance: #LOW }],
-    identification: [{ position: 60 }]
+    lineItem:       [{ position: 70, importance: #LOW }],
+    identification: [{ position: 70 }]
   }
   BaseUnit;
 
@@ -100,32 +109,32 @@ annotate view ZC_Material_PSP421
    * Weight & Volume group (Object Page field group)
    *===========================================================*/
   @UI: {
-    identification:  [{ position: 10 }],
-    fieldGroup:      [{ qualifier: 'WeightVolume', position: 10 }]
+    identification: [{ position: 10 }],
+    fieldGroup:     [{ qualifier: 'WeightVolume', position: 10 }]
   }
   GrossWeight;
 
   @UI: {
-    identification:  [{ position: 20 }],
-    fieldGroup:      [{ qualifier: 'WeightVolume', position: 20 }]
+    identification: [{ position: 20 }],
+    fieldGroup:     [{ qualifier: 'WeightVolume', position: 20 }]
   }
   NetWeight;
 
   @UI: {
-    identification:  [{ position: 30 }],
-    fieldGroup:      [{ qualifier: 'WeightVolume', position: 30 }]
+    identification: [{ position: 30 }],
+    fieldGroup:     [{ qualifier: 'WeightVolume', position: 30 }]
   }
   WeightUnit;
 
   @UI: {
-    identification:  [{ position: 40 }],
-    fieldGroup:      [{ qualifier: 'WeightVolume', position: 40 }]
+    identification: [{ position: 40 }],
+    fieldGroup:     [{ qualifier: 'WeightVolume', position: 40 }]
   }
   Volume;
 
   @UI: {
-    identification:  [{ position: 50 }],
-    fieldGroup:      [{ qualifier: 'WeightVolume', position: 50 }]
+    identification: [{ position: 50 }],
+    fieldGroup:     [{ qualifier: 'WeightVolume', position: 50 }]
   }
   VolumeUnit;
 
@@ -134,12 +143,12 @@ annotate view ZC_Material_PSP421
    *===========================================================*/
   @UI: {
     lineItem:       [{ position: 100, importance: #MEDIUM, label: 'Created On' }],
-    identification: [{ position: 70 }]
+    identification: [{ position: 80 }]
   }
-  MaterialCreationDate;
+  ProductCreationDate;
 
   @UI: {
-    identification: [{ position: 80 }]
+    identification: [{ position: 90 }]
   }
   LastChangeDate;
 
@@ -147,7 +156,7 @@ annotate view ZC_Material_PSP421
    * Old Material Number
    *===========================================================*/
   @UI: {
-    identification: [{ position: 90 }]
+    identification: [{ position: 100 }]
   }
   OldMaterialNumber;
 }

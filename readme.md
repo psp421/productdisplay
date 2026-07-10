@@ -15,7 +15,7 @@ SAP FIORI RAP transactional app to display Material master data sourced from the
 | Service Binding | SRVB | `ZUI_Material_PSP421_O4` | OData V4 UI binding |
 
 ### Standard base view used
-`I_Material` — SAP cloud-released interface view (VDM type BASIC, `@ObjectModel.usageType.serviceQuality: #A`) that reads from `MARA`.
+`I_Product` — SAP cloud-released interface view (VDM type BASIC, `@ObjectModel.usageType.serviceQuality: #A`) that reads from `MARA`. Part of the Product Master OData API (`API_PRODUCT_SRV`). Key field is `Product` (= MATNR); text is sourced via association `_ProductDescription`.
 
 ---
 

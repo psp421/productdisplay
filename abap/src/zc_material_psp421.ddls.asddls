@@ -1,6 +1,6 @@
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
   Projection (Consumption) CDS View for Material Display
-  Based on cloud-released standard view: I_Material
+  Based on cloud-released standard view: I_Product (API_PRODUCT_SRV)
   Package : ZPSP421_MATERIAL
   Author  : PSP421
  *++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -19,30 +19,33 @@
 @UI.headerInfo: {
   typeName:       'Material',
   typeNamePlural: 'Materials',
-  title:          { type: #STANDARD, value: 'Material' },
-  description:    { type: #STANDARD, value: 'MaterialName' }
+  title:          { type: #STANDARD, value: 'Product' },
+  description:    { type: #STANDARD, value: 'ProductDescription' }
 }
 
 @Search.searchable: true
 
 define root view entity ZC_Material_PSP421
-  as projection on I_Material
+  as projection on I_Product
 {
       /*-- Key --*/
-  key Material,
+  key Product,
 
       /*-- Classification --*/
       @EndUserText.label: 'Material Type'
-      MaterialType,
+      ProductType,
 
       @EndUserText.label: 'Industry Sector'
       IndustrySector,
 
       @EndUserText.label: 'Material Group'
-      MaterialGroup,
+      ProductGroup,
 
       @EndUserText.label: 'Old Material Number'
       OldMaterialNumber,
+
+      @EndUserText.label: 'Product Hierarchy'
+      ProductHierarchy,
 
       /*-- Units --*/
       @EndUserText.label: 'Base Unit of Measure'
@@ -71,25 +74,24 @@ define root view entity ZC_Material_PSP421
 
       /*-- Dates --*/
       @EndUserText.label: 'Created On'
-      MaterialCreationDate,
+      ProductCreationDate,
 
       @EndUserText.label: 'Last Changed On'
-      @UI.lineItem: [{ position: 110, importance: #LOW }]
       LastChangeDate,
 
       /*-- Status --*/
       @EndUserText.label: 'Deletion Indicator'
       @UI.hidden: true
-      MaterialIsMarkedForDeletion,
+      IsMarkedForDeletion,
 
       /*-- Text (localised) --*/
       @EndUserText.label: 'Material Description'
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.8
-      _MaterialText.MaterialName : localized,
+      _ProductDescription.ProductDescription : localized,
 
       /*-- Associations --*/
-      _MaterialText,
-      _MaterialType,
-      _MaterialGroup
+      _ProductDescription,
+      _ProductType,
+      _ProductGroup
 }
